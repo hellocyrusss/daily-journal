@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>My Daily Journal</h1>
+        <button id="night-mode-toggle">🌙 Night Mode</button>
+    </header>
+
+    <section class="journal-form">
+        <h2>New Entry</h2>
+        <form>
+            <label for="entry-date">Date:</label>
+            <input type="date" id="entry-date" required>
+
+            <label for="mood">Mood:</label>
+            <select id="mood" data-mood>
+                <option value="joyful">😄 Joyful</option>
+                <option value="calm">😌 Calm</option>
+                <option value="stressed">😖 Stressed</option>
+                <option value="creative">🎨 Creative</option>
+                <option value="energetic">⚡ Energetic</option>
+                <option value="lonely">😔 Lonely</option>
+                <option value="hopeful">🌈 Hopeful</option>
+            </select>
+
+            <label for="entry-text">Your Thoughts:</label>
+            <textarea id="entry-text" placeholder="Write your day here..." required></textarea>
+
+            <p id="writing-stats">Word Count: 0 | Streak: 0 days</p>
+
+            <button type="submit">Add Entry</button>
+        </form>
+    </section>
+
+    <section class="journal-archive">
+        <h2>Archive</h2>
+        <article class="journal-entry" data-mood="joyful">
+            <h3>12th Aug 2025 - 😄 Joyful</h3>
+            <p>Had The Best Day EVERRRRRRR!!!!!!</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cyrus David | 
+            <a href="https://instagram.com/urfavcyrusss" target="_blank">@urfavcyrusss</a>
+        </p>
+    </footer>
+
+    <script>
+        // Night Mode Toggle
+        const toggleBtn = document.getElementById('night-mode-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('night-mode');
+        });
+
+        // Word Count Tracker
+        const textarea = document.getElementById('entry-text');
+        const stats = document.getElementById('writing-stats');
+        textarea.addEventListener('input', () => {
+            const words = textarea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            stats.textContent = `Word Count: ${words.length} | Streak: 0 days`;
+        });
+    </script>
+
+</body>
+</html>

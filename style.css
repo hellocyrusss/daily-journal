@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    font-family: 'Patrick Hand', cursive;
+    margin: 0;
+    padding: 0;
+    background: #fdf6e3 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    background: #ffebc6;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #d4a373;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Night Mode */
+.night-mode {
+    background: #1a1a1a;
+    color: #f4f4f4;
+}
+.night-mode header {
+    background: #262626;
+    color: #fff;
+}
+.night-mode input,
+.night-mode select,
+.night-mode textarea {
+    background: #333;
+    color: #fff;
+    border: 1px solid #777;
+}
+.night-mode .journal-form,
+.night-mode .journal-entry {
+    background: rgba(40, 40, 40, 0.9);
+}
+
+/* Journal Form */
+.journal-form {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 1rem;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    margin-top: 0.3rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+/* Mood Colors */
+.journal-entry[data-mood="joyful"] { border-left: 5px solid #ffcc00; }
+.journal-entry[data-mood="calm"] { border-left: 5px solid #66ccff; }
+.journal-entry[data-mood="stressed"] { border-left: 5px solid #ff4d4d; }
+.journal-entry[data-mood="creative"] { border-left: 5px solid #ff99cc; }
+.journal-entry[data-mood="energetic"] { border-left: 5px solid #ff6600; }
+.journal-entry[data-mood="lonely"] { border-left: 5px solid #999999; }
+.journal-entry[data-mood="hopeful"] { border-left: 5px solid #33cc33; }
+
+/* Footer */
+footer {
+    background: #ffebc6;
+    padding: 1rem;
+    text-align: center;
+    border-top: 2px solid #d4a373;
+}
+footer a {
+    color: #333;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #ff6600;
+}
+
+/* Login Page */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 300px;
+}
+.login-container h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.login-container input, .login-container button {
+    margin-bottom: 1rem;
+}
+.login-container button {
+    background: #ffcc00;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.login-container button:hover {
+    background: #ffb700;
+}
+
+/* Print Styles */
+@media print {
+    header, footer, #night-mode-toggle {
+        display: none;
+    }
+    body {
+        background: white;
+        color: black;
+    }
+}
